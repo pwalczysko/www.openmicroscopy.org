@@ -18,52 +18,30 @@ meta_description: Want to set up and run your own OMERO workshop? All our traini
         <hr class="whitespace">
 
         <div class="row column text-center">
-            <h2>Workshop Preparation</h2>
+            <h2>What do I need to organize an OMERO workshop?</h2>
         </div>
         <hr>
         <div class="row column">
             <p>
-                Preparation for an OMERO workshop includes server setup, configuration and import of
-                sample data. Guides are available to indicate where to download the data, what import steps to
-                perform and any scripts that are needed to prepare the data.
-                Some longer workflows also benefit from being partially completed
-                before the workshop.
-            </p>
-            <p>
-                If you are interested in running your own workshop, please contact us so we can
-                advise on what to include and how best to prepare for your attendees.
-            </p>
-        </div>
-
-        <div class="row column text-center">
-            <h2>Training Repositories</h2>
-        </div>
-        <hr>
-        <div class="row column">
-            <p>
-                The training resources are hosted on several GitHub repositories:
-
+                Although the OME Team is giving workshops using their own resources, there might be many situations where you will or should prefer running your own workshop instead. These might be situations where your setup needs to be very specific, very demanding, your users insist on the training server being available all the time or for long periods of time, or, simply, you need more freedom in timing and frequency of the OMERO workshops at your institution.
                 <ul>
                     <li>
-                        <a href="https://github.com/ome/training-repos" target="_blank">Training
-                        Repos</a> is the parent repository that links to the others below and
-                        is tagged for each workshop we run.
-                        This allows us to know the precise version of all software, scripts
-                        and guides used for each training session.
+                        <a href="https://github.com/ome/training-repos" target="_blank">OMERO server</a> is a must. You can either use your own production server or set up a dedicated training server on your site. Deploy the server preferably using Ansible, or, use the Ansible playbook to deploy it manually.
                     </li>
                     <li>
                         <a href="https://github.com/openmicroscopy/prod-playbooks" target="_blank">
-                        Prod playbooks</a> for deployment of the OMERO training server.
+                        OMERO Apps</a> to give your users full experience, the vanilla OMERO server will not do. Make sure you have all the Apps installed according to the playbook [LINK TO APPs]. If you need to know what the Apps are doing, consult [LINK to guides, link to Apps www page, link to pypi].
                     <li>
                         <a href="https://github.com/ome/training-scripts" target="_blank">
-                        Training scripts</a> provides maintenance scripts for managing user accounts and
-                        data on the training server as well as scripts for users' workflows in the
-                        workshop itself.
+                        Image data on the server</a> are very useful. It can be argued that without a good portfolio of image data your workshop will not be able to show many OMERO features at all. Relying on your users to provide such data during your workshop is not realistic. Retrieve the data from [LINK to images] and import them to your server. You can use the [Link to import script]. The data can be preimported for a single user or several users on your OMERO server, but import for as many users as possible to minimize the confusion during the workshop, in case users are using or accessing the data of someone else. Like this, you will be able to show both the work on your own data in OMERO but also the cooperation aspects of OMERO.
                     </li>
                     <li>
                         <a href="https://github.com/ome/training-notebooks" target="_blank">
-                        Training notebooks</a> contains Jupyter notebooks used in the workshops and
-                        includes Docker containers for deploying the Jupyter server.
+                        Metadata/Annotations/Result tables</a> are needed for similar reasons as the image data. Use [LINK to Scripts] to populate the secondary metadata in your OMERO server. Use [LINK to OMERO.tables and CSV with results] to get the analysis results talbes for the imported images. Some features, such as data management, OMERO.parade and OMERO.figure cannot be shown in a meaningful manner without such metadata and analytical results. Again, it is unrealistic to expect your users to produce such metadata and analytical tables during the workshop.
+                    </li>
+                    <li>
+                        <a href="https://github.com/ome/training-notebooks" target="_blank">
+                        Users and Groups</a> are needed to show the cooperation aspects of OMERO. You can use your production server, but this aspect is quite hard to get accross on your production server, as the User/Group setup might be very specific and users will not get a full experience of the possibilities.
                     </li>
                 </ul>
             </p>
