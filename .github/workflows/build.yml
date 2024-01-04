@@ -39,7 +39,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ split(github.ref,'/') }}
           name: Release ${{ github.ref }}
           draft: false
           prerelease: false
